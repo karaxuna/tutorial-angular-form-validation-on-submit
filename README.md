@@ -48,11 +48,11 @@ angular.module('app').directive('validateAndSubmit', [function () {
 
 Explaining directive options:
 
-`validateAndSubmit` - is the name of the directive;
-`restrict: 'A'` - means that it's used as attribute on element;
-`require: '^form',` - looks for parent form controller and makes it available in `link` function as 4th parameter (`formCtrl`);
-`scope: { ... }` - means that directive has isolated instead of using existing one;
-`action: '&validateAndSubmit'` - we are passing function that we shall call when user submits valid form;
+`validateAndSubmit` - is the name of the directive;<br/>
+`restrict: 'A'` - means that it's used as attribute on element;<br/>
+`require: '^form',` - looks for parent form controller and makes it available in `link` function as 4th parameter (`formCtrl`);<br/>
+`scope: { ... }` - means that directive has isolated instead of using existing one;<br/>
+`action: '&validateAndSubmit'` - we are passing function that we shall call when user submits valid form;<br/>
 
 `element` parameter in `link` function is reference of the element to which current directive is attached to. Let's 
 add code to listen for element's click event:
@@ -89,9 +89,9 @@ Create email input:
 <input type="email" ng-model="email" ng-required="true" name="email" id="email" />
 ```
 
-`ng-model` - means that input value is bound to `scope.email` property;
-`ng-required` - means that field is required;
-`name` - we need name to access field by `<form_name>.<input_name>`. In this case `loginForm.email`;
+`ng-model` - means that input value is bound to `scope.email` property;<br/>
+`ng-required` - means that field is required;<br/>
+`name` - we need name to access field by `<form_name>.<input_name>`. In this case `loginForm.email`;<br/>
 
 And create password input:
 
@@ -100,7 +100,7 @@ And create password input:
 <input type="password" ng-model="password" ng-required="true" ng-minlength="5" name="password" id="password" />
 ```
 
-`min-length` - means that input will be invalid if it's length is less than 5 characters;
+`min-length` - means that input will be invalid if it's length is less than 5 characters;<br/>
 
 Now add containers where validation messages will appear:
 
@@ -113,9 +113,9 @@ Under email input:
 </div>
 ```
 
-`ng-if="loginForm.$submitted"` - means that this piece of html will be generated only when form is submitted;
-`loginForm.email.$error.required` - property will only exist if email is empty;
-`loginForm.email.$error.email` - property will exist if email format is invalid;
+`ng-if="loginForm.$submitted"` - means that this piece of html will be generated only when form is submitted;<br/>
+`loginForm.email.$error.required` - property will only exist if email is empty;<br/>
+`loginForm.email.$error.email` - property will exist if email format is invalid;<br/>
 
 Under password input:
 
@@ -126,7 +126,7 @@ Under password input:
 </div>
 ```
 
-`loginForm.password.$error.minlength` - property will exist if password characters length is less than 5;
+`loginForm.password.$error.minlength` - property will exist if password characters length is less than 5;<br/>
 
 Form inputs are ready, let's add submit button:
 
