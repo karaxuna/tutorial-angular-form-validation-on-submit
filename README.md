@@ -69,7 +69,7 @@ element.on('click', function () {
 });
 ```
 
-When user clicks on button (or on enter when filling form), we are checking if form is valid with `formCtrl.$valid` propery. 
+When user clicks on button (or on enter when filling form), we are checking if form is valid with `formCtrl.$valid` property. 
 Then we set form's state as submitted. Later we will show validation messages only when form is submitted.
 
 Directive is ready, now let's build a form:
