@@ -1,0 +1,11 @@
+.ng-submitted .ng-invalid {
+    border: solid 1px red;
+}
+
+.validation-message {
+    color: red;
+}
+
+label {
+    display: block;
+}

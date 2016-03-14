@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body ng-app="app">
+        <!-- Load angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        
+        <!-- Load main file -->
+        <script src="./index.js"></script>
+        
+        <!-- Example -->
+        <form name="loginForm" ng-controller="loginFormCtrl" novalidate>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" ng-model="email" ng-required="true" name="email" id="email" />
+                <div ng-if="loginForm.$submitted">
+                    <div ng-if="loginForm.email.$error.required" class="validation-message">Email is required.</div>
+                    <div ng-if="loginForm.email.$error.email" class="validation-message">Email format is invalid.</div>
+                </div>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" ng-model="password" ng-required="true" ng-minlength="5" name="password" id="password" />
+                <div ng-if="loginForm.$submitted">
+                    <div ng-if="loginForm.password.$error.required" class="validation-message">Password is required.</div>
+                    <div ng-if="loginForm.password.$error.minlength" class="validation-message">Password length must be at least 5 characters.</div>
+                </div>
+            </div>
+            <div>
+                <button validate-and-submit="logIn()">Log In</button>
+            </div>
+        </form>
+    </body>
+</html>
